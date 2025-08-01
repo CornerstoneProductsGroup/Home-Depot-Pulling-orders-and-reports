@@ -6,7 +6,6 @@ import zipfile
 from PyPDF2 import PdfReader, PdfWriter
 from datetime import datetime
 
-# Setup folders
 today_fmt = datetime.now().strftime("%-m-%-d-%Y")
 base_output_dir = f"daily_output/{today_fmt}"
 log_dir = "logs"
@@ -118,9 +117,6 @@ if sku_file and pdf_file:
             if summary_records:
                 st.subheader("📊 Summary Report")
                 st.dataframe(pd.DataFrame(summary_records))
-else:
-    st.info("Please upload both the Home Depot SKU sheet and the PDF file.")
-
 
             zip_filename = f"Depot {today_fmt}.zip"
             zip_path = os.path.join(base_output_dir, zip_filename)
@@ -134,3 +130,5 @@ else:
             if os.path.exists(csv_path):
                 with open(csv_path, "rb") as f:
                     st.download_button("📊 Download Summary CSV", f, file_name=csv_filename)
+else:
+    st.info("Please upload both the Home Depot SKU sheet and the PDF file.")

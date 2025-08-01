@@ -1,6 +1,6 @@
-Home Depot Order Splitter - Vendor Separation Only
+Home Depot Order Splitter - Final with Downloads
 --------------------------------------------------
-- Detects and separates pages by vendor
-- Only supports Home Depot
-- Outputs ZIPs and summary reports
+- Splits Home Depot PDFs by vendor
+- Outputs PDFs, ZIPs, and summary report
+- Includes in-app download buttons
 - Run with: streamlit run daily_order_splitter_app.py
